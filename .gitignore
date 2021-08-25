@@ -6,3 +6,4 @@
 .idea
 nogitde_modules
 /.eslintcache
+node_modules
