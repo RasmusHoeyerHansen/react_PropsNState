@@ -1,6 +1,7 @@
 import "./ExpenseItem.css";
-import {ExpenseDate} from "./ExpenseDate";
-import Card from "./Card";
+
+import Card from "../UI/Card";
+import ExpenseDate from "./ExpenseDate";
 
 export type ExpenseItemProp = {
 	title: string,
@@ -8,15 +9,11 @@ export type ExpenseItemProp = {
 	date: Date
 }
 
-
 const ExpenseItem = (props: ExpenseItemProp): JSX.Element => {
-	const day = props.date.getDate();
-	const month = props.date.getMonth();
-	const year = props.date.getFullYear();
 
 	return (
-		<Card >
-			<ExpenseDate day={day} month={month} year={year}/>
+		<Card className={"expense-item"}>
+			<ExpenseDate date={props.date}/>
 			<div className="expense-item__description">
 				<h2>{props.title}</h2>
 			</div>

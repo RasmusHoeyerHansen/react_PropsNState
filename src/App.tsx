@@ -1,12 +1,9 @@
-import Expenses from "./Components/Expenses";
-import {ExpenseItemProp} from "./Components/ExpenseItem";
-import "./Components/expenses.css"
+import Expenses from "./Components/Expenses/Expenses";
+import {ExpenseItemProp} from "./Components/Expenses/ExpenseItem";
+import "./Components/Expenses/expenses.css";
 
 
 function App() {
-	const today = new Date();
-
-	const date = today.getFullYear() + "-" + (today.getMonth() + 1) + "-" + today.getDate();
 
 	const expenses: ExpenseItemProp[] = [
 		{
@@ -24,17 +21,12 @@ function App() {
 			title: "New Desk (Wooden)",
 			amount: 450,
 			date: new Date(2021, 5, 12),
-		},
+		}
 	];
-
 
 	return (
 		<div>
-			<h2>Let's get started!</h2>
-			<div className={"expense"}>
-				<Expenses items={expenses}/>
-			</div>
-
+			<Expenses items={expenses}/>
 		</div>
 	);
 }
