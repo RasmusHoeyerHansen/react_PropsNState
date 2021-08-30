@@ -3,14 +3,13 @@ import "./ExpenseItem.css";
 import Card from "../UI/Card";
 import ExpenseDate from "./ExpenseDate";
 
-export type ExpenseItemProp = {
+export interface IExpenseInputItem {
 	title: string,
-	amount: number,
+	amount: string,
 	date: Date
 }
-
-const ExpenseItem = (props: ExpenseItemProp): JSX.Element => {
-
+/*Presentational/Stateless/dumb components. Only purpose is to render.*/
+const ExpenseItem = (props: IExpenseInputItem): JSX.Element => {
 	return (
 		<Card className={"expense-item"}>
 			<ExpenseDate date={props.date}/>
