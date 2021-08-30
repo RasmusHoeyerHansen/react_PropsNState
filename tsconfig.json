@@ -19,10 +19,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
-    "outDir": "./StateAndProps/public/js",
-    "rootDir": "./StateAndProps/src"
+    "outDir": "public/js",
+    "rootDir": "src"
   },
   "include": [
-    "./StateAndProps/src"
+    "src"
   ]
 }
