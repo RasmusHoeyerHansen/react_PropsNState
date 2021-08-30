@@ -20,7 +20,8 @@
     "jsx": "react-jsx",
     "noFallthroughCasesInSwitch": true,
     "outDir": "public/js",
-    "rootDir": "src"
+    "rootDir": "src",
+    "experimentalDecorators": true
   },
   "include": [
     "src"
