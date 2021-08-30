@@ -1,7 +1,7 @@
 import Expenses            from "./Components/Expenses/Expenses";
 import "./Components/Expenses/expenses.css";
 import NewExpense          from "./Components/NewExpenses/NewExpense";
-import DUMMYEXPENSES       from "./MockData/Data";
+import DUMMYEXPENSES       from "./MockData/Data"
 import {IExpenseInputItem} from "./Components/Expenses/ExpenseItem";
 import {useState}          from "react";
 
