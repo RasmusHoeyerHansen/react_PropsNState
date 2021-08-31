@@ -9,18 +9,15 @@ interface ICourseInput {
 	onAddGoal: (enteredText: string) => void;
 }
 
-const FormControl = styled.div `
-
+const FormControl = styled.div`
   margin: 0.5rem 0;
-  
-
-   &label {
+  & label {
     font-weight: bold;
     display: block;
     margin-bottom: 0.5rem;
   }
 
-  &input {
+  & input {
     display: block;
     width: 100%;
     border: 1px solid #ccc;
@@ -35,7 +32,7 @@ const FormControl = styled.div `
     border-color: #8b005d;
   }
 
-  &.invalid input{
+  &.invalid input {
     border-color: red;
     background: mistyrose;
   }
@@ -45,12 +42,9 @@ const FormControl = styled.div `
   }
 `;
 
-
 const CourseInput = (props: ICourseInput) => {
 	const [enteredValue, setEnteredValue] = useState("");
 	const [isValid, setIsValid] = useState(true);
-
-
 	const goalInputChangeHandler = (event: HTMLChangeEvent) => {
 		if (event.target.value.trim().length > 0) {
 			setIsValid(true);
@@ -69,7 +63,8 @@ const CourseInput = (props: ICourseInput) => {
 	};
 
 	return (<form onSubmit={formSubmitHandler}>
-		<FormControl className={!isValid ? 'invalid' : '' }>
+		{/* Apply dynamic CSS classes. One could also use props.*/}
+		<FormControl className={!isValid ? "invalid" : ""}>
 			<input
 				type="text" onChange={goalInputChangeHandler}
 			/>
