@@ -7,3 +7,4 @@
 nogitde_modules
 /.eslintcache
 node_modules
+package-lock.json
