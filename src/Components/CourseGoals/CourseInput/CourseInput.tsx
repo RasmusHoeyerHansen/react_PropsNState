@@ -1,19 +1,21 @@
-import React, {ChangeEvent, FormEvent, useState} from "react";
+import React, {FormEvent, useState} from "react";
 
-import AddGoalButton from "../../UI/Button/Button";
+import AddGoalButton     from "../../UI/Button/Button";
 import "./CourseInput.css";
+import {HTMLChangeEvent} from "../../../TypesAndClasses/HTMLChangeEvent";
 
 interface ICourseInput {
 	onAddGoal: (enteredText: string) => void;
 }
+
 
 const CourseInput = (props: ICourseInput) => {
 	const [enteredValue, setEnteredValue] = useState("");
 	const [isValid, setIsValid] = useState(true);
 
 
-	const goalInputChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
-		if (event.target.value.trim().length > 0){
+	const goalInputChangeHandler = (event: HTMLChangeEvent) => {
+		if (event.target.value.trim().length > 0) {
 			setIsValid(true);
 		}
 		setEnteredValue(event.target.value);
@@ -30,16 +32,9 @@ const CourseInput = (props: ICourseInput) => {
 	};
 
 	return (<form onSubmit={formSubmitHandler}>
-		<div className="form-control">
-			<label style={{color: !isValid ? "red" : "black"}}>
-				Course Goal
-			</label>
+		<div className={`form-control ${!isValid ? "invalid" : ""}`}>
 			<input
 				type="text" onChange={goalInputChangeHandler}
-				style={{
-					borderColor: !isValid ? "rgb(255,0,0,)" : "inherit",
-					background: !isValid ? "salmon" : "transparent"
-				}}
 			/>
 		</div>
 		<AddGoalButton type="submit">Add Goal</AddGoalButton>
